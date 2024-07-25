@@ -8,7 +8,13 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+	{
+		origin:["https://deploy-mern-1whq.vercel.app"],
+		methods:["POST","GET"],
+		credentials:true
+	}
+));
 
 // Database Connection With MongoDB
 mongoose.connect("mongodb+srv://divyanshushekhawat:14230000@cluster0.l43ympr.mongodb.net/e-commerce");
